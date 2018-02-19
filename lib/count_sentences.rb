@@ -15,6 +15,6 @@ class String
 
   def count_sentences
     binding pry
-    self.split(/[.?!]/).reject{|x| x.empty?}.count
+    self.split(/[.?!]/).map{|x| !(x.match(/\w+/).nil?}.reject{|x| x == false}.size
   end
 end
