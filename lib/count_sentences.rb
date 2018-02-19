@@ -13,7 +13,11 @@ class String
     self.end_with?("!") ? true : false
   end
 
+  def count_sentences
+    self.split(/[.!?]/).reject {|x| x.empty?}.size
+  end
+  
   def count_sentences_words
-      self.split(/[.!?]/).map{|x| !(x.match(/\w+/).nil?)}.reject{|x| x == false}.size
+      self.split(/[.!?]/).map{|x| !(x.match(/\w+/).nil?)}.reject{|x| x == false}.size 
   end
 end
